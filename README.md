@@ -1,4 +1,4 @@
-# Docker Image for Counter-Strike Source
+# Docker Image for Counter-Strike Source Server
 
 This docker image provides a preconfigured Counter-Strike Source server with several plugins.
 
@@ -9,8 +9,8 @@ The Docker image in the Docker Hub can be found [here](https://hub.docker.com/r/
 foxylion's docker image runs very well, but I needed a customized one. I also have some plugin preferences. Finally, I want to, eventually, include a stats and admin web frontend.
 
 List of used plugins:
-- [metamod:source v1.10.6](http://www.metamodsource.net/downloads/)
-- [SourceMod v1.7.3-5275](http://www.sourcemod.net/downloads.php?branch=stable)
+- [metamod:source v1.10.7-971](http://www.metamodsource.net/)
+- [SourceMod v1.10.0-6460](http://www.sourcemod.net/downloads.php?branch=stable)
 - [MapChooser Extended 1.10.2](https://forums.alliedmods.net/showthread.php?t=156974)
 - [RankMe v2.8.3](https://forums.alliedmods.net/showthread.php?p=1456869)
 
@@ -19,11 +19,11 @@ List of used plugins:
 The docker container requires some ports to be exposed, therefore a more advanced run command is required.
 
 ```
-docker run -d --name css-server-27015 \
+docker run -d --name css-server \
            -p 27015:27015 -p 27015:27015/udp -p 1200:1200 \
            -p 27005:27005/udp -p 27020:27020/udp -p 26901:26901/udp \
            -e RCON_PASSWORD=mypassword \
-           foxylion/steam-css
+           ddyess/css-server
 ```
 
 ## Available Environment Variables
