@@ -38,7 +38,7 @@ RUN cd /home/steam/css/cstrike && \
     tar zxvf /temp/mmsource.tar.gz && \
     tar zxvf /temp/sourcemod.tar.gz && \
     unzip /temp/rankme.zip && \
-    unzip /temp/mapchooser.zip addons/sourcemod/plugins && \
+    unzip /temp/mapchooser.zip && \
     rm /temp/*
 
 # Add default configuration files

@@ -10,7 +10,6 @@ The Docker image in the Docker Hub can be found [here](https://hub.docker.com/r/
 List of used plugins:
 - [metamod:source v1.10.6](http://www.metamodsource.net/downloads/)
 - [SourceMod v1.7.3-5275](http://www.sourcemod.net/downloads.php?branch=stable)
-- [Damage Report/Stats v1.1.13](https://forums.alliedmods.net/showthread.php?t=64661)
 - [MapChooser Extended 1.10.2](https://forums.alliedmods.net/showthread.php?t=156974)
 - [RankMe v2.8.3](https://forums.alliedmods.net/showthread.php?p=1456869)
 
@@ -26,20 +25,15 @@ docker run -d --name css-server-27015 \
            foxylion/steam-css
 ```
 
-## Restart the container
-
-Due to the linux kernel is caching the udp connection state you have to manually clean the udp connection tracking, before you can immediately reconenct to the server. More details can be found [here](https://github.com/docker/docker/issues/8795).
-
-```
-apt-get install conntrack
-conntrack -D -p udp
-```
-
 ## Available Environment Variables
 
 - ``RCON_PASSWORD`` is your personal RCON password to authenticate as the administrator
 - ``CSS_HOSTNAME`` is your custom server name shown in the server list
 - ``CSS_PASSWORD`` is the password a user may require to connect, can be left empty
+
+To use spaces in a variable value, wrap it in singles quotes, with the value in quotes:
+
+``-e 'CSS_HOSTNAME="Moody Crew"'``
 
 ## Expose you maps and sounds as a htdocs directory
 
