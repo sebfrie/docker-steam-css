@@ -33,13 +33,19 @@ ADD ./entrypoint.sh entrypoint.sh
 RUN ln -s /home/steam/linux32/ /home/steam/.steam/sdk32
 
 # Add Source Mods
-COPY --chown=steam:steam mods/ /temp
+COPY --chown=steam:steam mods/ /tempmods
+COPY --chown=steam:steam maps/ /tempmaps
+
 RUN cd /home/steam/css/cstrike && \
-    tar zxvf /temp/mmsource.tar.gz && \
-    tar zxvf /temp/sourcemod.tar.gz && \
-    unzip /temp/rankme.zip && \
-    unzip /temp/mapchooser.zip && \
-    rm /temp/*
+    tar zxvf /tempmods/mmsource.tar.gz && \
+    tar zxvf /tempmods/sourcemod.tar.gz && \
+    unzip /tempmods/rankme.zip && \
+    unzip /tempmods/mapchooser.zip && \
+    rm /tempmods/*
+
+RUN cd /home/steam/css/cstrike && \
+    unzip /tempmaps/unofficial-maps.zip && \
+    rm /tempmaps/*
 
 # Add default configuration files
 ADD cfg/ /home/steam/css/cstrike/cfg
