@@ -8,11 +8,26 @@ The Docker image in the Docker Hub can be found [here](https://hub.docker.com/r/
 
 foxylion's docker image runs very well, but I needed a customized one. I also have some plugin preferences. Finally, I want to, eventually, include a stats and admin web frontend.
 
-List of used plugins:
+List of Added Plugins:
 - [metamod:source v1.10.7-971](http://www.metamodsource.net/)
 - [SourceMod v1.10.0-6460](http://www.sourcemod.net/downloads.php?branch=stable)
-- [MapChooser Extended 1.10.2](https://forums.alliedmods.net/showthread.php?t=156974)
+  - With MapChooser, RockTheVote, and Nominations enabled
 - [RankMe v2.8.3](https://forums.alliedmods.net/showthread.php?p=1456869)
+
+List of Unofficial Maps:
+- (aim_deagle)[https://gamebanana.com/maps/17398]
+- (awp_leet)[https://gamebanana.com/maps/95417]
+- (de_cpl mill)[https://gamebanana.com/maps/11778]
+- (de_cpl strike)[https://gamebanana.com/maps/29875]
+- de_westwood_07
+- de_westwood_2010
+- (fy_iceworld2k18)[https://gamebanana.com/maps/200964]
+- (scoutzknives)[https://gamebanana.com/maps/20937]
+  - For low gravity:
+  
+    ``rcon sv_gravity 220``
+
+    ``rcon sv_airaccerlate 999999``
 
 ## Start the container
 
@@ -46,11 +61,21 @@ You can mount a directory where the css server should copy all currently install
 
 ## Other files to override
 
+### Custom motd_default.txt
+
+```
+-v /path/to/motd_default.txt:/home/steam/css/cstrike/cfg/motd_default.txt
+```
+
+Note: The mapcycle.txt file included as default does not contain all official maps or the unofficial ones.
+
 ### Custom mapcycle.txt
 
 ```
 -v /path/to/mapcycle.txt:/home/steam/css/cstrike/cfg/mapcycle.txt
 ```
+
+Note: The mapcycle.txt file included as default does not contain all official maps or the unofficial ones.
 
 ### SourceMod admins_simple.ini
 

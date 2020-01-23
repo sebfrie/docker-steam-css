@@ -40,7 +40,6 @@ RUN cd /home/steam/css/cstrike && \
     tar zxvf /tempmods/mmsource.tar.gz && \
     tar zxvf /tempmods/sourcemod.tar.gz && \
     unzip /tempmods/rankme.zip && \
-    unzip /tempmods/mapchooser.zip && \
     rm /tempmods/*
 
 RUN cd /home/steam/css/cstrike && \
