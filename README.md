@@ -51,7 +51,15 @@ To use spaces in a variable value, wrap it in singles quotes, with the value in 
 
 ``-e 'CSS_HOSTNAME="Moody Crew"'``
 
-## Expose you maps and sounds as a htdocs directory
+## Simplify Administration
+
+Create a folder in the server's root folder such as ``/games/css`` and use that to customize server settings without working with the Docker container repeatedly. 
+
+The file overrides below can at most allow you to restart the container, rather than having to change anything in the container. 
+
+Note: The end goal is to allow almost total customization from outside the container without all of the individual overrides or requiring the entire ``cstrike`` folder to be outside of the container.
+
+## Expose your maps and sounds as a htdocs directory
 
 You can mount a directory where the css server should copy all currently installed maps and sounds so you can use the `sv_downloadurl` option.
 
@@ -67,7 +75,7 @@ You can mount a directory where the css server should copy all currently install
 -v /path/to/motd_default.txt:/home/steam/css/cstrike/cfg/motd_default.txt
 ```
 
-Note: The mapcycle.txt file included as default does not contain all official maps or the unofficial ones.
+Note: There is an ``extra`` folder that contains a copy of the default motd_default.txt.
 
 ### Custom mapcycle.txt
 
