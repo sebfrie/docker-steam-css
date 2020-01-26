@@ -38,7 +38,6 @@ List of Unofficial Maps:
 - de_cpl mill
 - de_cpl strike
 - de_out_rats
-- de_rats
 - de_westwood_2010
 - fy_iceworld2k18
 - scoutzknives
