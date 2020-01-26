@@ -8,26 +8,41 @@ The Docker image in the Docker Hub can be found [here](https://hub.docker.com/r/
 
 foxylion's docker image runs very well, but I needed a customized one. I also have some plugin preferences. Finally, I want to, eventually, include a stats and admin web frontend.
 
+## Builds and Tags
+
+I am currently using 2 tags:
+- latest
+- dev
+
+### Latest
+
+The ``latest`` tag is the stable build that I am running on my server. This image is built from the ``master`` branch on GitHub.
+
+### Dev
+
+The ``dev`` tag is a version I am working on, but have not yet decided it is good enough to merge into ``master``. This image is built from the ``dev`` branch on GitHub
+
+## Plugins and Maps
+
 List of Added Plugins:
 - [metamod:source v1.10.7-971](http://www.metamodsource.net/)
 - [SourceMod v1.10.0-6460](http://www.sourcemod.net/downloads.php?branch=stable)
   - With MapChooser, RockTheVote, and Nominations enabled
 - [RankMe v2.8.3](https://forums.alliedmods.net/showthread.php?p=1456869)
+- Damage Report
 
 List of Unofficial Maps:
-- (aim_deagle)[https://gamebanana.com/maps/17398]
-- (awp_leet)[https://gamebanana.com/maps/95417]
-- (de_cpl mill)[https://gamebanana.com/maps/11778]
-- (de_cpl strike)[https://gamebanana.com/maps/29875]
-- de_westwood_07
+- aim_deagle7k
+- awp_leet
+- awp_paradise
+- de_cpl mill
+- de_cpl strike
+- de_out_rats
+- de_rats
 - de_westwood_2010
-- (fy_iceworld2k18)[https://gamebanana.com/maps/200964]
-- (scoutzknives)[https://gamebanana.com/maps/20937]
-  - For low gravity:
-  
-    ``rcon sv_gravity 220``
-
-    ``rcon sv_airaccerlate 999999``
+- fy_iceworld2k18
+- scoutzknives
+  - Low Gravity On/Off Menu options now available in admin menu
 
 ## Start the container
 
@@ -58,16 +73,6 @@ Create a folder in the server's root folder such as ``/games/css`` and use that 
 The file overrides below can at most allow you to restart the container, rather than having to change anything in the container. 
 
 Note: The end goal is to allow almost total customization from outside the container without all of the individual overrides or requiring the entire ``cstrike`` folder to be outside of the container.
-
-## Expose your maps and sounds as a htdocs directory
-
-You can mount a directory where the css server should copy all currently installed maps and sounds so you can use the `sv_downloadurl` option.
-
-```
-- v /path/to/target:/home/steam/htdocs
-```
-
-## Other files to override
 
 ### Custom motd_default.txt
 
