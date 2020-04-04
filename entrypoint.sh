@@ -1,5 +1,6 @@
 #!/bin/bash
-set -e
+set -e PUID="$USER_ID" -e PGID="$GROUP_ID"
+		      
 trap '' TERM INT HUP
 
 # Ensure CSS is up to date
