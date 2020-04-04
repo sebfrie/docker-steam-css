@@ -3,11 +3,13 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get \
     install -y wget lib32gcc1 lib32tinfo5
 
-RUN useradd -ms /bin/bash steam
+# RUN useradd -ms /bin/bash steam
+ENV USER_ID 1000
+ENV GROUP_ID 1000 
 
 WORKDIR /home/steam
 
-USER steam
+USER ${USER_ID}:${GROUP_ID}
 
 RUN wget -O /tmp/steamcmd_linux.tar.gz http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \
   tar -xvzf /tmp/steamcmd_linux.tar.gz && \
@@ -19,8 +21,6 @@ RUN ./steamcmd.sh +login anonymous +force_install_dir ./css +app_update 232330 v
 ENV CSS_HOSTNAME Counter-Strike Source Dedicated Server
 ENV CSS_PASSWORD ""
 ENV RCON_PASSWORD mysup3rs3cr3tpassw0rd
-ENV USER_ID 1000
-ENV GROUP_ID 1000
 
 EXPOSE 27015/udp
 EXPOSE 27015
