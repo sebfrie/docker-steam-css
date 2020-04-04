@@ -3,7 +3,7 @@ build:
 	docker build -t ddyess/css-server .
 
 run:
-	docker run -d -e PUID=$USER_ID -e PGID=$GROUP_ID \
+	docker run -d -e PUID="$$USER_ID" -e PGID="$$GROUP_ID" \
 		      -p 27015:27015 \
 	              -p 27015:27015/udp \
 	              -p 1200:1200 \
