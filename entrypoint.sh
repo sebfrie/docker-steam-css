@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e PUID="$USER_ID" -e PGID="$GROUP_ID"
+set -e
 		      
 trap '' TERM INT HUP
 
