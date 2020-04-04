@@ -1,10 +1,9 @@
 
 build:
-	docker build -t ddyess/css-server .
+	docker build -t sebfrie/css-server .
 
 run:
-	docker run -d -e PUID="$$USER_ID" -e PGID="$$GROUP_ID" \
-		      -p 27015:27015 \
+	docker run -d -p 27015:27015 \
 	              -p 27015:27015/udp \
 	              -p 1200:1200 \
 	              -p 27005:27005/udp \
