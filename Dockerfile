@@ -19,6 +19,8 @@ RUN ./steamcmd.sh +login anonymous +force_install_dir ./css +app_update 232330 v
 ENV CSS_HOSTNAME Counter-Strike Source Dedicated Server
 ENV CSS_PASSWORD ""
 ENV RCON_PASSWORD mysup3rs3cr3tpassw0rd
+ENV USER_ID 1000
+ENV GROUP_ID 1000
 
 EXPOSE 27015/udp
 EXPOSE 27015
