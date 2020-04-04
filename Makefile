@@ -3,7 +3,8 @@ build:
 	docker build -t sebfrie/css-server .
 
 run:
-	docker run -d -p 27015:27015 \
+	docker run -d -e PUID=1029 -e PGID=100 \
+		      -p 27015:27015 \
 	              -p 27015:27015/udp \
 	              -p 1200:1200 \
 	              -p 27005:27005/udp \
