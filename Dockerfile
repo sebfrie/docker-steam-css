@@ -3,13 +3,14 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get \
     install -y wget lib32gcc1 lib32tinfo5
 
-# RUN useradd -ms /bin/bash steam
 ENV USER_ID 1000
-ENV GROUP_ID 1000 
+ENV GROUP_ID 1000
+
+RUN useradd -g ${GROUP_ID} -ms /bin/bash -u ${USER_ID} steam
 
 WORKDIR /home/steam
 
-USER ${USER_ID}:${GROUP_ID}
+USER steam
 
 RUN wget -O /tmp/steamcmd_linux.tar.gz http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \
   tar -xvzf /tmp/steamcmd_linux.tar.gz && \
