@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get \
     install -y wget lib32gcc1 lib32tinfo5
 
-ENV USER_ID 1000
+ENV USER_ID 1029
 
 RUN useradd -ms /bin/bash -u ${USER_ID} steam
 
