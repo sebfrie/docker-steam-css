@@ -4,9 +4,8 @@ RUN apt-get update && apt-get \
     install -y wget lib32gcc1 lib32tinfo5
 
 ENV USER_ID 1000
-ENV GROUP_ID 1000
 
-RUN useradd -g ${GROUP_ID} -ms /bin/bash -u ${USER_ID} steam
+RUN useradd -ms /bin/bash -u ${USER_ID} steam
 
 WORKDIR /home/steam
 
