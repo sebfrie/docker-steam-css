@@ -9,4 +9,4 @@ if [ "$1" == "update" ]; then
 fi
 
 cd css
-./srcds_run -game cstrike +exec server.cfg +hostname "$CSS_HOSTNAME" +sv_password "$CSS_PASSWORD" +rcon_password "$RCON_PASSWORD" +map cs_assault
+./srcds_run -game cstrike +exec server.cfg +hostname "$CSS_HOSTNAME" +sv_password "$CSS_PASSWORD" +rcon_password "$RCON_PASSWORD" +map "$START_MAP" +maxplayers "$MAX_PLAYERS"
