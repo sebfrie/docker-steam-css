@@ -52,6 +52,7 @@ RUN cd /home/steam/css/cstrike && \
 
 RUN cd /home/steam/css/cstrike && \
   tar zxvf /tempmaps/unofficial-maps.tar.gz && \
+  tar zxvf /tempmaps/unofficial-maps2.tar.gz && \
   rm /tempmaps/*
 
 CMD ./entrypoint.sh
