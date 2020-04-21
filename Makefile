@@ -4,8 +4,9 @@ build:
 
 run:
 	docker run -d -e PUID=1029 -e PGID=100 \
-		      -e TZ=Europe/Berlin \
-		      -p 27015:27015 \
+				  -v /etc/localtime:/etc/localtime:ro \
+				  -v /etc/TZ:/etc/timezone:ro \
+		          -p 27015:27015 \
 	              -p 27015:27015/udp \
 	              -p 1200:1200 \
 	              -p 27005:27005/udp \
