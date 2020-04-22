@@ -45,6 +45,7 @@ RUN cd /home/steam/css/cstrike && \
   tar zxvf /tempmods/mmsource.tar.gz && \
   tar zxvf /tempmods/sourcemod.tar.gz && \
   tar zxvf /tempmods/rankme.tar.gz && \
+  tar zxvf /tempmods/bottools.tar.gz && \
   mv /tempmods/gem_damage_report.smx addons/sourcemod/plugins && \
   mv /tempmods/fix_angles.smx addons/sourcemod/plugins && \
   mv /tempmods/c4timer.smx addons/sourcemod/plugins && \
@@ -52,7 +53,6 @@ RUN cd /home/steam/css/cstrike && \
 
 RUN cd /home/steam/css/cstrike && \
   tar zxvf /tempmaps/unofficial-maps.tar.gz && \
-  tar zxvf /tempmaps/unofficial-maps2.tar.gz && \
   rm /tempmaps/*
 
 CMD ./entrypoint.sh
