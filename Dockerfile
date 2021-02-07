@@ -49,6 +49,7 @@ RUN cd /home/steam/css/cstrike && \
   mv /tempmods/gem_damage_report.smx addons/sourcemod/plugins && \
   mv /tempmods/fix_angles.smx addons/sourcemod/plugins && \
   mv /tempmods/c4timer.smx addons/sourcemod/plugins && \
+  mv /tempmods/autojoin.smx addons/sourcemod/plugins && \
   rm /tempmods/*
 
 RUN cd /home/steam/css/cstrike && \
